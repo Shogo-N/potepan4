@@ -12,22 +12,22 @@ if memo_type == 1 then
   
   memo_type = STDIN.read
   
-  CSV.open("#{file_name}.csv","W") do |memo|
-      memo << ["#{memo_type}"]
+  CSV.open("#{file_name}.csv",'w') do |memo|
+     memo << ["#{memo_type}"]
   end
 
-elsif memo_type == 2
+else
  
   puts "編集したいファイル名を入力してください。"
-  file_name = gets.chomp
+  file_name = gets
     
   puts "編集内容を入力してください"
   puts "完了後、Ctrl + Dをおします"
   
   memo_type = STDIN.read
   
-  CSV.open("#{file_name}.csv","a") do |memo|
-      memo << ["#{memo_type}"]
+  CSV.open("#{file_name}.csv",'a') do |memo|
+     memo << ["#{memo_type}"]
   end
   
  end
