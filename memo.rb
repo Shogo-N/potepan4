@@ -5,8 +5,8 @@ puts "1(新規でメモを作成),2(既存メモを編集する)"
 
 if memo_type == 1 then
   puts "拡張子を除いたファイル名を入力してください"
-  file_name = gets.chomp
-uts "メモしたい内容を記入してください"
+  file_name = gets.chomp 
+  puts "メモしたい内容を記入してください"
   puts "完了したらCtrl + Dをおします"
   
   memo_type = STDIN.read
