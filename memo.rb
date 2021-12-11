@@ -5,7 +5,7 @@ puts "1(新規でメモを作成),2(既存メモを編集する)"
 
 if memo_type == 1 then
   puts "拡張子を除いたファイル名を入力してください"
-  file_name = gets.chomp 
+  file_name = gets.strip 
   puts "メモしたい内容を記入してください"
   puts "完了したらCtrl + Dをおします"
   
@@ -15,10 +15,10 @@ if memo_type == 1 then
      memo << ["#{memo_type}"]
   end
 
-else
+  elsif memo_type == 2 then
  
   puts "編集したいファイル名を入力してください。"
-  file_name = gets.chomp
+  file_name = gets.strip
     
   puts "編集内容を入力してください"
   puts "完了後、Ctrl + Dをおします"
@@ -28,5 +28,8 @@ else
   CSV.open("#{file_name}.csv",'a') do |memo|
       memo << ["#{memo_type}"]
   end
+
+  else
+    puts "入力値が不正です。入力をし直してください。"
+  end
   
- end
